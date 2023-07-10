@@ -15,8 +15,8 @@ struct CompositionalModel: Hashable {
 }
 
 extension CompositionalModel {
-    static let modelsArray = [
-        [CompositionalModel(mainTitle: "Recents", description: nil, image: "catOne"),
+    static let modelsArray: [[CompositionalModel]] = [
+        [CompositionalModel(mainTitle: "Recents", description: nil, image: "photo"),
          CompositionalModel(mainTitle: "WhatsApp", description: nil, image: "catTwo"),
          CompositionalModel(mainTitle: "Favorites", description: nil, image: "catCrazy"),
          CompositionalModel(mainTitle: "Snapchat", description: nil, image: "catFOur"),
