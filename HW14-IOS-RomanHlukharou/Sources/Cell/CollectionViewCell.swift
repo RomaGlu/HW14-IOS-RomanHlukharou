@@ -10,53 +10,35 @@ import SnapKit
 
 class CollectionViewCell: UICollectionViewCell {
     
+    // MARK: - Properties
+    
     static let identifier = "CompositionalCell"
     
-//    fileprivate func configure() {
-//        if let image = settings?.image {
-//            imageView.image = UIImage(named: image)
-//        }
-//
-//        mainTitleLabel.text = settings?.mainTitle
-//        photoCountLabel.text = settings?.description
-//    }
-//
-//    var settings: CompositionalModel? {
-//        didSet {
-//            configure()
-//        }
-//    }
+    // MARK: - Outlets
     
     private lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.layer.cornerRadius = 5
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
+        imageView.backgroundColor = .systemBackground
         imageView.clipsToBounds = true
         return imageView
     }()
     
     private lazy var mainTitleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 12)
+        label.font = UIFont.systemFont(ofSize: 16)
         return label
     }()
     
     private lazy var photoCountLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 18)
+        label.font = UIFont.systemFont(ofSize: 16)
         label.textColor = .lightGray
         return label
     }()
     
-    //    private lazy var stack: UIStackView = {
-    //        let stack = UIStackView(arrangedSubviews: [imageView, mainTitleLabel, photoCountLabel])
-    //        stack.axis = .horizontal
-    //        stack.alignment = .leading
-    //        stack.distribution = .fill
-    //        stack.setCustomSpacing(10, after: imageView)
-    //        stack.setCustomSpacing(5, after: mainTitleLabel)
-    //        return stack
-    //    }()
+    // MARK: - Initializators
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -68,6 +50,8 @@ class CollectionViewCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - Layour
     
     func setupView() {
         contentView.backgroundColor = .systemBackground
@@ -83,26 +67,33 @@ class CollectionViewCell: UICollectionViewCell {
         imageView.snp.makeConstraints { make in
             make.top.left.right.equalTo(contentView)
             make.bottom.equalTo(contentView.snp.bottom).offset(-35)
+            make.width.equalTo(imageView.snp.height)
         }
         
         mainTitleLabel.snp.makeConstraints { make in
-            make.top.equalTo(imageView.snp.bottom).offset(10)
+            make.top.equalTo(imageView.snp.bottom).offset(3)
             make.left.equalTo(contentView.snp.left)
             make.width.equalTo(100)
             
         }
         
         photoCountLabel.snp.makeConstraints { make in
-            make.top.equalTo(mainTitleLabel.snp.bottom).offset(-5)
+            make.top.equalTo(mainTitleLabel.snp.bottom).offset(1)
             make.left.equalTo(contentView.snp.left)
             make.width.equalTo(50)
             
         }
     }
     
+    // MARK: - Configuration
+    
     func configuration(model: CompositionalModel) {
         self.imageView.image = UIImage(named: model.image)
         self.mainTitleLabel.text = model.mainTitle
         self.photoCountLabel.text = model.description
+        
+        if mainTitleLabel.text == "People" {
+            imageView.contentMode = .scaleAspectFit
+        }
     }
 }
