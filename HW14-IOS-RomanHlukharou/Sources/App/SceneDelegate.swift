@@ -34,7 +34,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let third = AlbumViewController()
         let thirdIcon = UITabBarItem(title: "Albums", image: UIImage(systemName: "rectangle.stack.fill"), selectedImage: UIImage(systemName: "rectangle.stack.fill"))
         third.tabBarItem = thirdIcon
-        third.title = "Albums"
         let thirdNavigationViewController = UINavigationController(rootViewController: third)
         
         let fourth = SearchViewController()

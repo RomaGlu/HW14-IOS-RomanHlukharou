@@ -35,7 +35,7 @@ class AlbumViewController: UIViewController {
     
     func setupView() {
         view.backgroundColor = .systemBackground
-        title = "Albums"
+        navigationItem.title = "Albums"
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
@@ -101,7 +101,7 @@ extension AlbumViewController: UICollectionViewDelegate, UICollectionViewDataSou
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
                                                       heightDimension: .fractionalHeight(1))
                 let layoutItem = NSCollectionLayoutItem(layoutSize: itemSize)
-                layoutItem.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 0)
+                layoutItem.contentInsets = NSDirectionalEdgeInsets(top: 15, leading: 5, bottom: 15, trailing: 10)
                 
                 let groupSize = NSCollectionLayoutSize(widthDimension: .estimated(185),
                                                        heightDimension: .estimated(470))
@@ -129,7 +129,7 @@ extension AlbumViewController: UICollectionViewDelegate, UICollectionViewDataSou
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
                                                       heightDimension: .fractionalHeight(1))
                 let layoutItem = NSCollectionLayoutItem(layoutSize: itemSize)
-                layoutItem.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 0)
+                layoutItem.contentInsets = NSDirectionalEdgeInsets(top: 15, leading: 5, bottom: 15, trailing: 10)
                 
                 let groupSize = NSCollectionLayoutSize(widthDimension: .estimated(185),
                                                        heightDimension: .estimated(235))
@@ -157,7 +157,7 @@ extension AlbumViewController: UICollectionViewDelegate, UICollectionViewDataSou
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
                                                       heightDimension: .fractionalHeight(1))
                 let layoutItem = NSCollectionLayoutItem(layoutSize: itemSize)
-                layoutItem.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 0)
+                layoutItem.contentInsets = NSDirectionalEdgeInsets(top: 15, leading: 5, bottom: 15, trailing: 10)
                 
                 let groupSize = NSCollectionLayoutSize(widthDimension: .estimated(185),
                                                        heightDimension: .estimated(235))

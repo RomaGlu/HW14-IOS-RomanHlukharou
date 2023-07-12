@@ -37,7 +37,6 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         
         let thirdViewController = AlbumViewController()
         let thirdIcon = UITabBarItem(title: "Albums", image: UIImage(systemName: "rectangle.stack.fill"), selectedImage: UIImage(systemName: "rectangle.stack.fill"))
-        thirdViewController.title = "Albums"
         thirdViewController.navigationController?.navigationBar.prefersLargeTitles = true
         thirdViewController.tabBarItem = thirdIcon
         
@@ -55,5 +54,12 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
     }
     
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        navigationItem.title = "Albums"
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
+        
+    }
+    
+    @objc func addTapped() {
+        
     }
 }
