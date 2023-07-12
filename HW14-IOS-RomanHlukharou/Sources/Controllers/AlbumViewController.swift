@@ -37,6 +37,7 @@ class AlbumViewController: UIViewController {
         view.backgroundColor = .systemBackground
         navigationItem.title = "Albums"
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
     }
     
     func setupHierarchy() {
@@ -49,6 +50,10 @@ class AlbumViewController: UIViewController {
             make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
             make.left.right.bottom.equalTo(view)
         }
+    }
+    
+    @objc func addTapped() {
+        
     }
 }
 
