@@ -52,9 +52,7 @@ class AlbumViewController: UIViewController {
         }
     }
     
-    @objc func addTapped() {
-        
-    }
+    @objc func addTapped() {}
 }
 
 extension AlbumViewController: UICollectionViewDelegate, UICollectionViewDataSource {
